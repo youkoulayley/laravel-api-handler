@@ -1,16 +1,23 @@
 <?php
 use Mockery as m;
+
 use \Illuminate\Database\Eloquent\Collection;
 use \Illuminate\Database\Query\Expression;
 use \Illuminate\Http\JsonResponse;
 use \Illuminate\Support\Facades\Config;
-use \Illuminate\Support\Facades\Input;
+use \Illuminate\Support\Facades\Request;
 use \Illuminate\Support\Facades\Response;
-use \Marcelgwerder\ApiHandler\ApiHandler;
+use PHPUnit\Framework\TestCase;
+use Youkoulayley\ApiHandler\ApiHandler;
 
-class ApiHandlerTest extends PHPUnit_Framework_TestCase
+class ApiHandlerTest extends TestCase
 {
-    public function setUp()
+    /**
+     * @var ApiHandler
+     */
+    private ApiHandler $apiHandler;
+
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -75,7 +82,7 @@ class ApiHandlerTest extends PHPUnit_Framework_TestCase
         $input = m::mock('InputMock');
         $input->shouldReceive('get')->once()
               ->with()->andReturn($this->params);
-        Input::swap($input);
+        Request::swap($input);
 
         //Mock the response
         $response = m::mock('ResponseMock');
@@ -110,7 +117,7 @@ class ApiHandlerTest extends PHPUnit_Framework_TestCase
         $post = new Post();
         $result = $this->apiHandler->parseSingle($post, 5, []);
 
-        $this->assertInstanceOf('Marcelgwerder\ApiHandler\Result', $result);
+        $this->assertInstanceOf('Youkoulayley\ApiHandler\Result', $result);
     }
 
     public function testParseMultiple()
@@ -118,7 +125,7 @@ class ApiHandlerTest extends PHPUnit_Framework_TestCase
         $post = new Post();
         $result = $this->apiHandler->parseMultiple($post, [], []);
 
-        $this->assertInstanceOf('Marcelgwerder\ApiHandler\Result', $result);
+        $this->assertInstanceOf('Youkoulayley\ApiHandler\Result', $result);
     }
 
     public function testGetBuilder()

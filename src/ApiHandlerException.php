@@ -1,4 +1,4 @@
-<?php namespace Marcelgwerder\ApiHandler;
+<?php namespace Youkoulayley\ApiHandler;
 
 class ApiHandlerException extends \Exception
 {

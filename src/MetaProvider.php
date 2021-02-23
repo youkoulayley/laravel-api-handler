@@ -1,4 +1,4 @@
-<?php namespace Marcelgwerder\ApiHandler;
+<?php namespace Youkoulayley\ApiHandler;
 
 abstract class MetaProvider
 {

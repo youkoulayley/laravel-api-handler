@@ -1,20 +1,19 @@
 {
-    "name": "betalabs/laravel-api-handler",
+    "name": "youkoulayley/laravel-api-handler",
     "description": "Package providing helper functions for a Laravel REST-API ",
     "keywords": ["api", "laravel", "rest", "url", "parse", "mysql"],
-    "homepage": "http://github.com/marcelgwerder/laravel-api-handler",
+    "homepage": "http://github.com/youkoulayley/laravel-api-handler",
     "license": "MIT",
     "authors": [
         {
-            "name": "Marcel Gwerder",
-            "email": "info@marcelgwerder.ch"
+            "name": "Youkoulayley"
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "^8.0",
-        "illuminate/database": "^8.0",
-        "illuminate/http": "^8.0"
+        "php": ">=7.4",
+        "illuminate/support": "~5.0|^6.0|^7.0",
+        "illuminate/database": "~5.0|^6.0|^7.0",
+        "illuminate/http": "~5.0|^6.0|^7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.0",
@@ -22,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Marcelgwerder\\ApiHandler\\": "src"
+            "Youkoulayley\\ApiHandler\\": "src"
         }
     },
     "minimum-stability": "stable"

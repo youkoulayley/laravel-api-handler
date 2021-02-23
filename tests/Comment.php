@@ -1,9 +1,12 @@
 <?php
+
+use Illuminate\Database\Eloquent\Model;
+
 /**
  * This model is only used for testing purpose
  */
 
-class Comment extends \Illuminate\Database\Eloquent\Model
+class Comment extends Model
 {
     protected $connection = 'mysql';
 

@@ -1,6 +1,6 @@
-<?php namespace Marcelgwerder\ApiHandler;
+<?php namespace Youkoulayley\ApiHandler;
 
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 
 class ApiHandler
@@ -11,12 +11,12 @@ class ApiHandler
      * @param  mixed                           $queryBuilder   Some kind of query builder instance
      * @param  array|integer                   $identification Identification of the dataset to work with
      * @param  array|boolean                   $queryParams    The parameters used for parsing
-     * @return Marcelgwerder\ApiHandler\Result                 Result object that provides getter methods
+     * @return Youkoulayley\ApiHandler\Result                 Result object that provides getter methods
      */
     public function parseSingle($queryBuilder, $identification, $queryParams = false)
     {
         if ($queryParams === false) {
-            $queryParams = Input::get();
+            $queryParams = Request::input();
         }
 
         $parser = new Parser($queryBuilder, $queryParams);
@@ -36,7 +36,7 @@ class ApiHandler
     public function parseMultiple($queryBuilder, $fullTextSearchColumns = array(), $queryParams = false)
     {
         if ($queryParams === false) {
-            $queryParams = Input::get();
+            $queryParams = Request::input();
         }
 
         $parser = new Parser($queryBuilder, $queryParams);

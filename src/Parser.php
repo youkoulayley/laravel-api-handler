@@ -1,4 +1,4 @@
-<?php namespace Marcelgwerder\ApiHandler;
+<?php namespace Youkoulayley\ApiHandler;
 
 use \ArrayObject;
 use \Illuminate\Database\Eloquent\Builder as EloquentBuilder;

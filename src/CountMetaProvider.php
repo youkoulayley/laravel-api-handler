@@ -1,6 +1,6 @@
 <?php 
 
-namespace Marcelgwerder\ApiHandler;
+namespace Youkoulayley\ApiHandler;
 
 use \Illuminate\Database\Query\Builder as QueryBuilder;
 
